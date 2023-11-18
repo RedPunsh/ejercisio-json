@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <title>Books App</title>
+</head>
+<body>
+    <div class="container mt-5 d-flex gap-5">
+
+        <% books.forEach(book => { %>
+            
+        <div class="card" style="width: 18rem;">
+            <!-- <img src="<%= book.image %>" class="card-img-top img-fluid w-100 h-auto" alt="Imagen de la carta"> -->
+            <img src="<%= book.image %>" class="img-fluid w-100 h-auto" alt="img-card">
+            <div class="card-body">
+                <h5 class="card-title"><%= book.title %></h5>
+                <p class="card-text"><%= book.description %></p>
+                <a href="/delete/<%= book.id %>" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+        <% }) %>
+
+    </div>    
+</body>
+</html>
